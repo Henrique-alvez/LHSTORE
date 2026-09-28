@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LH STORE | Estilo é Atitude - Loja Oficial Streetwear</title>
+  <meta name="description" content="Sua marca definitiva de streetwear luxury. Entregas exclusivas em Cambuí e Região.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpg" href="assets/images/logo.jpg">
+
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. Top Announcement Bar (Entrega em Cambuí e Região)
+       ========================================================================== -->
+  <div class="announcement-bar">
+    <div class="container announcement-content">
+      <div class="announcement-item">
+        <i class="fa-solid fa-truck-fast text-blue"></i>
+        <span><strong>ENTREGAS EXCLUSIVAS:</strong> Cambuí - MG e Região</span>
+      </div>
+      <div class="announcement-item">
+        <i class="fa-solid fa-credit-card text-blue"></i>
+        <span>Pagamento via <strong>PIX, Cartão ou Dinheiro</strong></span>
+      </div>
+      <div class="announcement-item">
+        <i class="fa-brands fa-whatsapp text-blue"></i>
+        <span>Pedido direto no <strong>WhatsApp</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       2. Site Header & Sticky Navbar (APENAS LOGO, CURTIDA E CARRINHO)
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-container">
+      
+      <!-- Brand Logo APENAS -->
+      <a href="index.html" class="brand-logo" title="LH STORE - Página Inicial">
+        <img src="C:/Users/Win11/.gemini/antigravity/brain/d10acab1-76dc-474c-b7c9-b8dcc5fc436b/media__1790357426699.jpg" alt="LH STORE Logo" id="header-logo-img">
+      </a>
+
+      <!-- Actions (Apenas Curtidas/Favoritos, Carrinho e Acesso ao Painel Admin) -->
+      <div class="header-actions">
+        <button class="action-btn" id="wishlist-btn" title="Curtidas / Favoritos">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge-count wishlist-count-badge">0</span>
+        </button>
+
+        <button class="action-btn" id="cart-btn" title="Carrinho de Compras">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="badge-count cart-count-badge">0</span>
+        </button>
+
+        <button class="action-btn admin-trigger-btn" id="admin-btn" title="Painel Admin">
+          <i class="fa-solid fa-gear"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       3. Universal Hero Banner Full 4K Ultra-Wide
+       ========================================================================== -->
+  <section class="hero-section hero-section-4k">
+    <div class="hero-container-4k">
+      <div class="hero-banner-wrap">
+        <a href="#catalogo" title="Ir para o catálogo de produtos">
+          <picture>
+            <source media="(max-width: 768px)" srcset="C:/Users/Win11/.gemini/antigravity/brain/c45df08b-e29f-44c3-a6b7-09e97dfa1758/media__1790426133305.jpg">
+            <img src="C:/Users/Win11/.gemini/antigravity/brain/c45df08b-e29f-44c3-a6b7-09e97dfa1758/media__1790426132663.png" alt="Sejam Bem Vindos à LH Store - As peças mais diferenciadas" class="hero-banner-img">
+          </picture>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. Categories Showcase (Renderizado Dinamicamente pelo app.js)
+       ========================================================================== -->
+  <section class="container" id="categorias" style="padding-top: 1.5rem;">
+    <div class="section-title-wrap">
+      <h2 class="section-title">Categorias</h2>
+    </div>
+
+    <div class="categories-grid" id="categories-grid">
+      <!-- Injetado dinamicamente via app.js -->
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. Catalog Section
+       ========================================================================== -->
+  <section class="container" id="catalogo">
+    
+    <!-- Toolbar com Busca Integrada -->
+    <div class="catalog-toolbar">
+      <div class="search-box catalog-search">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="search-input" class="search-input" placeholder="Buscar produtos...">
+      </div>
+      
+      <div class="results-count" id="results-count">Exibindo produtos</div>
+      
+      <div class="sort-wrap">
+        <label for="sort-select" class="sort-label">Ordenar:</label>
+        <select id="sort-select" class="sort-select">
+          <option value="popular">Mais Populares</option>
+          <option value="newest">Lançamentos</option>
+          <option value="price-low">Menor Preço</option>
+          <option value="price-high">Maior Preço</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid" id="products-grid">
+      <!-- Injetado via app.js -->
+    </div>
+
+  </section>
+
+  <!-- ==========================================================================
+       6. Benefícios & Aviso de Entrega Local
+       ========================================================================== -->
+  <section style="background: var(--bg-surface); border-top: 1px solid rgba(56, 189, 248, 0.2); border-bottom: 1px solid rgba(56, 189, 248, 0.2); margin: 4rem 0; padding: 2.5rem 0;">
+    <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; text-align: center;">
+      <div>
+        <i class="fa-solid fa-location-dot text-blue" style="font-size: 1.8rem; margin-bottom: 0.6rem;"></i>
+        <h4 style="font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">Entrega em Cambuí e Região</h4>
+        <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 0.2rem;">Entregamos diretamente na sua residência.</p>
+      </div>
+
+      <div>
+        <i class="fa-solid fa-credit-card text-blue" style="font-size: 1.8rem; margin-bottom: 0.6rem;"></i>
+        <h4 style="font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">Formas de Pagamento</h4>
+        <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 0.2rem;">PIX, Cartão ou Dinheiro na entrega.</p>
+      </div>
+
+      <div>
+        <i class="fa-brands fa-whatsapp text-blue" style="font-size: 1.8rem; margin-bottom: 0.6rem;"></i>
+        <h4 style="font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">Pedido no WhatsApp</h4>
+        <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 0.2rem;">Finalização rápida e atendimento direto.</p>
+      </div>
+
+      <div>
+        <i class="fa-solid fa-shield-halved text-blue" style="font-size: 1.8rem; margin-bottom: 0.6rem;"></i>
+        <h4 style="font-weight: 700; font-size: 0.9rem; text-transform: uppercase;">Produtos Originais</h4>
+        <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 0.2rem;">Garantia de qualidade LH STORE.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. Cart Drawer (Slide-over)
+       ========================================================================== -->
+  <div class="cart-drawer-backdrop" id="cart-drawer-backdrop">
+    <div class="cart-drawer">
+      
+      <div class="cart-header">
+        <h3 class="cart-title">
+          <i class="fa-solid fa-bag-shopping text-blue"></i> Carrinho (<span class="cart-count-badge">0</span>)
+        </h3>
+        <button class="close-btn" id="close-cart-btn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <!-- Shipping Goal Progress Bar -->
+      <div class="shipping-progress-box">
+        <div class="shipping-progress-text" id="shipping-progress-text">
+          Faltam R$ 299,00 para Frete Grátis
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="shipping-progress-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Cart Items -->
+      <div class="cart-items-container" id="cart-items-container">
+        <!-- Injetado via app.js -->
+      </div>
+
+      <!-- Cart Footer -->
+      <div class="cart-footer">
+        <div class="coupon-box">
+          <input type="text" id="coupon-input" class="coupon-input" placeholder="Cupom (ex: LH10)">
+          <button class="btn-apply-coupon" id="apply-coupon-btn">Aplicar</button>
+        </div>
+
+        <div class="summary-rows">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="cart-subtotal">R$ 0,00</span>
+          </div>
+          <div class="summary-row">
+            <span>Desconto</span>
+            <span id="cart-discount" style="color: var(--accent-green);">R$ 0,00</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total</span>
+            <span id="cart-total" class="text-blue">R$ 0,00</span>
+          </div>
+        </div>
+
+        <div class="cart-checkout-btns">
+          <button class="btn-whatsapp-fast" style="width: 100%; justify-content: center; padding: 1rem; font-size: 1rem;" onclick="window.openCheckout()">
+            <i class="fa-brands fa-whatsapp"></i> Finalizar Pedido no WhatsApp
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       8. Quick View Modal
+       ========================================================================== -->
+  <div class="modal-backdrop" id="quickview-modal">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="document.getElementById('quickview-modal').classList.remove('active')">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="quickview-content"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       9. Size Guide Modal
+       ========================================================================== -->
+  <div class="modal-backdrop" id="size-guide-modal">
+    <div class="modal-container" style="max-width: 550px; padding: 2rem;">
+      <button class="modal-close-btn" onclick="window.closeSizeGuide()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      
+      <h3 style="font-size: 1.3rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.4rem;">
+        Tabela de Medidas (cm)
+      </h3>
+      <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 1.2rem;">
+        Modelagem exclusiva Streetwear Oversized LH STORE.
+      </p>
+
+      <table class="size-table">
+        <thead>
+          <tr>
+            <th>Tamanho</th>
+            <th>Tórax</th>
+            <th>Comprimento</th>
+            <th>Manga</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>P</td><td>56 cm</td><td>73 cm</td><td>22 cm</td></tr>
+          <tr><td>M</td><td>59 cm</td><td>76 cm</td><td>23 cm</td></tr>
+          <tr><td>G</td><td>62 cm</td><td>79 cm</td><td>24 cm</td></tr>
+          <tr><td>GG</td><td>65 cm</td><td>82 cm</td><td>25 cm</td></tr>
+          <tr><td>XG</td><td>68 cm</td><td>85 cm</td><td>26 cm</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       10. Checkout Modal (Pedido Formatado via WhatsApp para Cambuí e Região)
+       ========================================================================== -->
+  <div class="modal-backdrop" id="checkout-modal">
+    <div class="modal-container" style="max-width: 620px;">
+      <button class="modal-close-btn" onclick="window.closeCheckoutModal()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div style="padding: 2rem;">
+        <div style="text-align: center; margin-bottom: 1.2rem;">
+          <h3 style="font-size: 1.3rem; font-weight: 800; text-transform: uppercase;">
+            Finalizar Pedido via WhatsApp
+          </h3>
+          <p style="font-size: 0.82rem; color: var(--accent-blue-bright); margin-top: 0.3rem;">
+            <i class="fa-solid fa-location-dot"></i> Entregas exclusivas para <strong>Cambuí - MG e Região</strong>
+          </p>
+        </div>
+
+        <form onsubmit="window.processCheckoutForm(event)">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-bottom: 1.2rem;">
+            <div style="grid-column: span 2;">
+              <label style="font-size: 0.75rem; color: var(--color-text-muted); display: block; margin-bottom: 0.3rem;">Seu Nome Completo *</label>
+              <input type="text" id="chk-name" class="search-input" style="border-radius: var(--radius-sm); padding-left: 0.8rem;" placeholder="Ex: Gabriel Oliveira" required>
+            </div>
+
+            <div>
+              <label style="font-size: 0.75rem; color: var(--color-text-muted); display: block; margin-bottom: 0.3rem;">Seu WhatsApp *</label>
+              <input type="text" id="chk-phone" class="search-input" style="border-radius: var(--radius-sm); padding-left: 0.8rem;" placeholder="(35) 99999-9999" required>
+            </div>
+
+            <div>
+              <label style="font-size: 0.75rem; color: var(--color-text-muted); display: block; margin-bottom: 0.3rem;">Cidade (Cambuí e Região) *</label>
+              <select id="chk-city" class="search-input" style="border-radius: var(--radius-sm); padding-left: 0.8rem; background: var(--bg-input); color: white;" required>
+                <option value="Cambuí - MG">Cambuí - MG</option>
+                <option value="Córrego do Bom Jesus - MG">Córrego do Bom Jesus - MG</option>
+                <option value="Itapeva - MG">Itapeva - MG</option>
+                <option value="Camanducaia - MG">Camanducaia - MG</option>
+                <option value="Estiva - MG">Estiva - MG</option>
+                <option value="Senador Amaral - MG">Senador Amaral - MG</option>
+                <option value="Outra Cidade da Região">Outra Cidade da Região</option>
+              </select>
+            </div>
+
+            <div style="grid-column: span 2;">
+              <label style="font-size: 0.75rem; color: var(--color-text-muted); display: block; margin-bottom: 0.3rem;">Endereço Completo & Bairro *</label>
+              <input type="text" id="chk-address" class="search-input" style="border-radius: var(--radius-sm); padding-left: 0.8rem;" placeholder="Rua, Número, Bairro, Ponto de Referência" required>
+            </div>
+
+            <div style="grid-column: span 2;">
+              <label style="font-size: 0.75rem; color: var(--color-text-muted); display: block; margin-bottom: 0.3rem;">Forma de Pagamento *</label>
+              <select id="chk-payment" class="search-input" style="border-radius: var(--radius-sm); padding-left: 0.8rem; background: var(--bg-input); color: white;" required>
+                <!-- Preenchido dinamicamente via app.js com as opções do Admin -->
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-whatsapp-fast" style="width: 100%; justify-content: center; padding: 1rem; font-size: 1rem;">
+            <i class="fa-brands fa-whatsapp"></i> Enviar Pedido no WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       11. PAINEL ADMIN MODAL (Gerenciar Categorias, Produtos, Formas de Pagamento e Configurações)
+       ========================================================================== -->
+  <div class="modal-backdrop" id="admin-modal">
+    <div class="modal-container admin-modal-container">
+      <div class="admin-modal-header">
+        <h3><i class="fa-solid fa-sliders text-blue"></i> Painel Administrativo LH STORE</h3>
+        <button class="modal-close-btn" onclick="window.closeAdminModal()"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <!-- Abas do Painel Admin -->
+      <div class="admin-tabs">
+        <button class="admin-tab-btn active" data-tab="tab-products"><i class="fa-solid fa-boxes-stacked"></i> Produtos & Estoque</button>
+        <button class="admin-tab-btn" data-tab="tab-categories"><i class="fa-solid fa-tags"></i> Categorias</button>
+        <button class="admin-tab-btn" data-tab="tab-payments"><i class="fa-solid fa-credit-card"></i> Formas de Pagamento</button>
+        <button class="admin-tab-btn" data-tab="tab-settings"><i class="fa-solid fa-wrench"></i> Configurações Loja</button>
+      </div>
+
+      <div class="admin-modal-body">
+        
+        <!-- TAB 1: PRODUTOS & ESTOQUE -->
+        <div class="admin-tab-content active" id="tab-products">
+          <div class="admin-action-bar">
+            <h4>Gerenciar Produtos</h4>
+            <button class="btn-primary btn-sm" onclick="window.openAddProductForm()"><i class="fa-solid fa-plus"></i> Novo Produto</button>
+          </div>
+
+          <!-- Formulário de Adicionar / Editar Produto -->
+          <div id="product-form-wrapper" class="admin-card-box" style="display: none;">
+            <h4 id="product-form-title" class="admin-form-heading">Adicionar Novo Produto</h4>
+            <form id="admin-product-form" onsubmit="window.saveAdminProduct(event)">
+              <input type="hidden" id="admin-prod-id">
+              
+              <div class="admin-form-grid">
+                <div class="form-group span-2">
+                  <label>Nome do Produto *</label>
+                  <input type="text" id="admin-prod-name" class="search-input" placeholder="Ex: Camiseta Oversized LH Black" required>
+                </div>
+
+                <div class="form-group">
+                  <label>Subtítulo / Tecido</label>
+                  <input type="text" id="admin-prod-subtitle" class="search-input" placeholder="Ex: Algodão 260g Boxy Fit">
+                </div>
+
+                <div class="form-group">
+                  <label>Categoria *</label>
+                  <select id="admin-prod-category" class="search-input" required>
+                    <!-- Preenchido via app.js -->
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label>Preço de Venda (R$) *</label>
+                  <input type="number" step="0.01" id="admin-prod-price" class="search-input" placeholder="189.90" required>
+                </div>
+
+                <div class="form-group">
+                  <label>Preço Antigo / De (R$)</label>
+                  <input type="number" step="0.01" id="admin-prod-original-price" class="search-input" placeholder="249.90">
+                </div>
+
+                <div class="form-group">
+                  <label>Quantidade em Estoque *</label>
+                  <input type="number" id="admin-prod-stock" class="search-input" placeholder="20" required>
+                </div>
+
+                <div class="form-group">
+                  <label>Tag / Selo (Ex: NOVO, 20% OFF)</label>
+                  <input type="text" id="admin-prod-badge" class="search-input" placeholder="LANÇAMENTO">
+                </div>
+
+                <!-- SELEÇÃO DE TAMANHOS DISPONÍVEIS -->
+                <div class="form-group span-2">
+                  <label style="font-weight: 700; color: var(--accent-blue-bright); margin-bottom: 0.5rem; display: block;">
+                    <i class="fa-solid fa-ruler-combined"></i> Tamanhos Disponíveis para Este Produto *
+                  </label>
+                  <div class="admin-sizes-selector-grid" id="admin-sizes-checkbox-container">
+                    <label class="admin-size-checkbox-pill">
+                      <input type="checkbox" name="admin-size" value="P"> <span>P</span>
+                    </label>
+                    <label class="admin-size-checkbox-pill">
+                      <input type="checkbox" name="admin-size" value="M"> <span>M</span>
+                    </label>
+                    <label class="admin-size-checkbox-pill">
+                      <input type="checkbox" name="admin-size" value="G"> <span>G</span>
+                    </label>
+                    <label class="admin-size-checkbox-pill">
+                      <input type="checkbox" name="admin-size" value="GG"> <span>GG</span>
+                    </label>
+                    <label class="admin-size-checkbox-pill">
+                      <input type="checkbox" name="admin-size" value="XG"> <span>XG</span>
+                    </label>
+                    <label class="admin-size-checkbox-pill">
+                      <input type="checkbox" name="admin-size" value="38"> <span>38</span>
+                    </label>
+                    <label class="admin-size-checkbox-pill">
+                      <input type="checkbox" name="admin-size" value="40"> <span>40</span>
+                    </label>
+                    <label class="admin-size-checkbox-pill">
+                      <input type="checkbox" name="admin-size" value="42"> <span>42</span>
+                    </label>
+                    <label class="admin-size-checkbox-pill">
+                      <input type="checkbox" name="admin-size" value="44"> <span>44</span>
+                    </label>
+                    <label class="admin-size-checkbox-pill">
+                      <input type="checkbox" name="admin-size" value="46"> <span>46</span>
+                    </label>
+                    <label class="admin-size-checkbox-pill">
+                      <input type="checkbox" name="admin-size" value="ÚNICO"> <span>ÚNICO</span>
+                    </label>
+                  </div>
+                  <small style="color: var(--color-text-muted); font-size: 0.72rem; display: block; margin-top: 0.35rem;">
+                    Marque todos os tamanhos disponíveis que o cliente poderá escolher na loja.
+                  </small>
+                </div>
+
+                <div class="form-group span-2">
+                  <label>URL / Caminho da Foto do Produto *</label>
+                  <div style="display: flex; gap: 0.75rem; align-items: center;">
+                    <input type="text" id="admin-prod-image" class="search-input" placeholder="Ex: https://i.imgur.com/exemplo.jpg ou assets/images/foto.jpg" required oninput="window.previewAdminImage(this.value)">
+                    <div id="admin-img-preview-box" style="width: 50px; height: 50px; border-radius: var(--radius-sm); border: 1px solid var(--border-blue); overflow: hidden; background: var(--bg-input); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; color: var(--color-text-muted);">
+                      <span>Foto</span>
+                    </div>
+                  </div>
+                  <small style="color: var(--color-text-muted); font-size: 0.72rem; display: block; margin-top: 0.35rem;">
+                    💡 <strong>Como pegar o caminho da foto:</strong> Copie o link direto de uma foto na internet (terminado em .jpg/.png) ou coloque a foto na pasta <code>assets/images/</code> e digite <code>assets/images/nome-da-foto.jpg</code>.
+                  </small>
+                </div>
+
+
+                <div class="form-group span-2">
+                  <label>Descrição do Produto</label>
+                  <textarea id="admin-prod-description" class="search-input" rows="3" placeholder="Descrição detalhada do produto..."></textarea>
+                </div>
+              </div>
+
+              <div class="admin-form-actions">
+                <button type="button" class="btn-secondary" onclick="window.closeProductForm()">Cancelar</button>
+                <button type="submit" class="btn-primary"><i class="fa-solid fa-floppy-disk"></i> Salvar Produto</button>
+              </div>
+            </form>
+          </div>
+
+
+          <!-- Tabela de Produtos -->
+          <div class="admin-table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Foto</th>
+                  <th>Nome do Produto</th>
+                  <th>Categoria</th>
+                  <th>Preço</th>
+                  <th>Estoque</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="admin-products-table-body">
+                <!-- Preenchido via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 2: CATEGORIAS -->
+        <div class="admin-tab-content" id="tab-categories">
+          <div class="admin-action-bar">
+            <h4>Gerenciar Categorias</h4>
+          </div>
+
+          <div class="admin-card-box">
+            <h4 class="admin-form-heading">Criar Nova Categoria</h4>
+            <form id="admin-category-form" onsubmit="window.saveAdminCategory(event)" style="display: flex; gap: 0.75rem; align-items: flex-end; flex-wrap: wrap;">
+              <div style="flex: 1; min-width: 220px;">
+                <label style="font-size: 0.75rem; color: var(--color-text-muted); display: block; margin-bottom: 0.3rem;">Nome da Categoria *</label>
+                <input type="text" id="admin-cat-name" class="search-input" placeholder="Ex: Jaquetas & Blusões" required>
+              </div>
+              <button type="submit" class="btn-primary"><i class="fa-solid fa-plus"></i> Criar Categoria</button>
+            </form>
+          </div>
+
+          <div class="admin-table-responsive" style="margin-top: 1.5rem;">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nome da Categoria</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="admin-categories-table-body">
+                <!-- Preenchido via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 3: FORMAS DE PAGAMENTO -->
+        <div class="admin-tab-content" id="tab-payments">
+          <div class="admin-action-bar">
+            <h4>Gerenciar Formas de Pagamento</h4>
+          </div>
+
+          <div class="admin-card-box">
+            <h4 class="admin-form-heading">Cadastrar Nova Forma de Pagamento</h4>
+            <form id="admin-payment-form" onsubmit="window.saveAdminPaymentMethod(event)" style="display: flex; gap: 0.75rem; align-items: flex-end; flex-wrap: wrap;">
+              <div style="flex: 1; min-width: 240px;">
+                <label style="font-size: 0.75rem; color: var(--color-text-muted); display: block; margin-bottom: 0.3rem;">Nome da Forma de Pagamento *</label>
+                <input type="text" id="admin-pay-name" class="search-input" placeholder="Ex: PIX (Chave Cadastrada), Cartão 12x, etc." required>
+              </div>
+              <button type="submit" class="btn-primary"><i class="fa-solid fa-plus"></i> Cadastrar Pagamento</button>
+            </form>
+          </div>
+
+          <div class="admin-table-responsive" style="margin-top: 1.5rem;">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Forma de Pagamento</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="admin-payments-table-body">
+                <!-- Preenchido via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 4: CONFIGURAÇÕES DA LOJA -->
+        <div class="admin-tab-content" id="tab-settings">
+          <div class="admin-card-box">
+            <h4 class="admin-form-heading">Configurações Gerais & Segurança</h4>
+            <form id="admin-settings-form" onsubmit="window.saveAdminSettings(event)">
+              <div class="form-group" style="margin-bottom: 1.2rem;">
+                <label>Número do WhatsApp da Loja (Com DDD, ex: 5535999999999) *</label>
+                <input type="text" id="admin-setting-whatsapp" class="search-input" placeholder="5535999999999" required>
+                <small style="color: var(--color-text-muted); font-size: 0.75rem; display: block; margin-top: 0.2rem;">
+                  Seus clientes enviarão o pedido formatado direto para este WhatsApp.
+                </small>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1.2rem;">
+                <label>Nova Senha do Painel Admin (Opcional)</label>
+                <input type="password" id="admin-setting-password" class="search-input" placeholder="Digite para alterar a senha...">
+                <small style="color: var(--color-text-muted); font-size: 0.75rem; display: block; margin-top: 0.2rem;">
+                  Preencha apenas se desejar trocar a senha atual de acesso ao Painel Admin.
+                </small>
+              </div>
+
+              <div class="form-group" style="margin-bottom: 1.5rem;">
+                <label>Região de Entrega</label>
+                <input type="text" id="admin-setting-zone" class="search-input" value="Cambuí - MG e Região" readonly>
+              </div>
+
+              <div class="admin-form-actions">
+                <button type="button" class="btn-secondary" onclick="window.resetStoreData()"><i class="fa-solid fa-rotate"></i> Restaurar Dados Padrão</button>
+                <button type="submit" class="btn-primary"><i class="fa-solid fa-floppy-disk"></i> Salvar Configurações</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       12. ADMIN LOGIN MODAL (Autenticação Segura com Hash SHA-256)
+       ========================================================================== -->
+  <div class="modal-backdrop" id="admin-login-modal">
+    <div class="modal-container" style="max-width: 420px; padding: 2.2rem; text-align: center;">
+      <button class="modal-close-btn" onclick="window.closeAdminLoginModal()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div style="margin-bottom: 1.5rem;">
+        <div style="width: 60px; height: 60px; border-radius: 50%; background: var(--bg-surface-hover); border: 1px solid var(--border-blue); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto; font-size: 1.5rem; color: var(--accent-blue-bright);">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h3 style="font-size: 1.25rem; font-weight: 800; text-transform: uppercase;">Acesso Restrito</h3>
+        <p style="font-size: 0.82rem; color: var(--color-text-muted); margin-top: 0.3rem;">
+          Área administrativa protegida. Informe a credencial de segurança.
+        </p>
+      </div>
+
+      <form onsubmit="window.verifyAdminPassword(event)">
+        <div style="margin-bottom: 1.2rem; text-align: left; position: relative;">
+          <label style="font-size: 0.75rem; color: var(--color-text-muted); display: block; margin-bottom: 0.3rem;">Senha de Acesso *</label>
+          <div style="position: relative;">
+            <input type="password" id="admin-login-pass" class="search-input" style="border-radius: var(--radius-sm); padding-left: 0.8rem; padding-right: 2.5rem; width: 100%; font-size: 0.95rem;" placeholder="••••••••" required autocomplete="current-password">
+            <button type="button" onclick="window.toggleAdminPassVisibility()" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: var(--color-text-muted);">
+              <i class="fa-regular fa-eye" id="pass-eye-icon"></i>
+            </button>
+          </div>
+          <div id="admin-login-error" style="color: var(--accent-red); font-size: 0.78rem; margin-top: 0.4rem; display: none; font-weight: 600;">
+            ⚠️ Senha incorreta! Acesso negado.
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 0.85rem;">
+          <i class="fa-solid fa-lock"></i> Autenticar e Entrar
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1rem;">
+            <img src="C:/Users/Win11/.gemini/antigravity/brain/d10acab1-76dc-474c-b7c9-b8dcc5fc436b/media__1790357426699.jpg" alt="LH STORE Logo" style="height: 40px;">
+          </a>
+          <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; max-width: 300px;">
+            Marca autoral de streetwear luxury. Roupas com caimento encorpado e matérias-primas de alto padrão. Entregas em Cambuí e Região.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navegação</h4>
+          <ul class="footer-links">
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#categorias">Categorias</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Ajuda</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="window.openSizeGuide(); return false;">Tabela de Medidas</a></li>
+            <li><a href="#" onclick="window.openAdminModal(); return false;"><i class="fa-solid fa-lock"></i> Área Admin</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Contato & Entrega</h4>
+          <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 0.8rem;">
+            Entregas exclusivas em Cambuí - MG e cidades da região.<br>
+            Atendimento via WhatsApp.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 LH STORE. Todos os direitos reservados.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
